@@ -1,5 +1,7 @@
 # mi_app_store
 
+Demo(http://mistore.tianjian.co)
+
 ## Project setup
 ```
 npm install
