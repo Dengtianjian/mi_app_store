@@ -52,20 +52,22 @@
 
 <template>
   <div id="recommend_page" class="recommend">
-    <div class="carousel_map">
-      <div class="carousel_item">
-        <img class="item_img" src="/static/banner/home_banner.png" alt srcset>
-      </div>
-    </div>
-    <div class="recommend_zone">
-      <div class="zone_item" v-for="zone in recommendZones" :key="zone['id']">
-        <div class="zone_icon">
-          <img class="zone_icon_img" :src="zone['icon']" alt srcset>
+    <div class="page_width">
+      <div class="carousel_map">
+        <div class="carousel_item">
+          <img class="item_img" src="/static/banner/home_banner.png" alt srcset />
         </div>
-        <div class="zone_name">{{ zone['name'] }}</div>
       </div>
+      <div class="recommend_zone">
+        <div class="zone_item" v-for="zone in recommendZones" :key="zone['id']">
+          <div class="zone_icon">
+            <img class="zone_icon_img" :src="zone['icon']" alt srcset />
+          </div>
+          <div class="zone_name">{{ zone['name'] }}</div>
+        </div>
+      </div>
+      <AppList class="app_list" :apps="apps" mode="column" />
     </div>
-    <AppList class="app_list" :apps="apps" mode="column" />
   </div>
 </template>
 
@@ -73,8 +75,8 @@
 import AppList from "../../components/appList";
 export default {
   name: "recommendPage",
-  mounted(){
-    this.apps=this.$store.state.apps;
+  mounted() {
+    this.apps = this.$store.state.apps;
   },
   data() {
     return {

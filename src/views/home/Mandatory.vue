@@ -15,7 +15,7 @@
   margin-top: 10px;
 }
 .type_mandatory_apps1 {
-  margin-top:30px;
+  margin-top: 30px;
 }
 .type_mandatory_apps_list {
   margin-top: 12px;
@@ -24,17 +24,24 @@
 
 <template>
   <div id="mandatory" class="mandatory">
-    <div class="mandatory_apps">
-      <AppList class="mandatory_apps_list" :apps="$store.state.apps" mode="multi-line"/>
-      <div class="all_install_button">全部安装</div>
-    </div>
-    <div class="type_mandatory_apps" :class="'type_mandatory_apps'+(appsIndex+1)" v-for="(appsItem,appsIndex) in MandatoryTypeApps" :key="appsItem['id']">
-      <div class="title_common">
-        <div class="main">
-          <div class="text">{{ appsItem['typeName'] }}</div>
-        </div>
+    <div class="page_width">
+      <div class="mandatory_apps">
+        <AppList class="mandatory_apps_list" :apps="$store.state.apps" mode="multi-line" />
+        <div class="all_install_button">全部安装</div>
       </div>
-      <AppList class="type_mandatory_apps_list" :apps="appsItem['apps']" mode="column"/>
+      <div
+        class="type_mandatory_apps"
+        :class="'type_mandatory_apps'+(appsIndex+1)"
+        v-for="(appsItem,appsIndex) in MandatoryTypeApps"
+        :key="appsItem['id']"
+      >
+        <div class="title_common">
+          <div class="main">
+            <div class="text">{{ appsItem['typeName'] }}</div>
+          </div>
+        </div>
+        <AppList class="type_mandatory_apps_list" :apps="appsItem['apps']" mode="column" />
+      </div>
     </div>
   </div>
 </template>

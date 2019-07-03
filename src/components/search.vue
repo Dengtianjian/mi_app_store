@@ -15,7 +15,6 @@
   align-items: center;
   padding: 0 10px;
   height: 33px;
-  width: 300px;
   border-radius: 18px;
   box-sizing: border-box;
   background: #f0f0f0;
@@ -106,7 +105,7 @@
         @focus="displayMoreWin('display')"
       >
     </div>
-    <div class="more_area page_witdh" v-if="isFocus">
+    <div class="more_area page_width" v-if="isFocus">
       <div class="scroll_y" :style="{ height:winHeight-53+'px' }" >
         <div class="hot_search">
           <div class="title_common">

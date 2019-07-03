@@ -21,7 +21,7 @@
   <div id="home_page" class="home">
     <div class="top_placeholder"></div>
     <Header class="default_header"/>
-    <tabs :defaultKey="4" @change="switchPage" class="tabs_com">
+    <tabs :defaultKey="1" @change="switchPage" class="tabs_com">
       <tab-pane idkey="1" name="推荐">
         <Recommend v-if="currentKey==1"/>
       </tab-pane>
@@ -30,7 +30,9 @@
       <tab-pane idkey="4" name="分类">
         <Classification v-if="currentKey==4" />
       </tab-pane>
-      <tab-pane idkey="5" name="金米奖">Contact</tab-pane>
+      <tab-pane idkey="5" name="金米奖">
+        <GlodelRiceAward v-if="currentKey==5" />
+      </tab-pane>
     </tabs>
   </div>
 </template>
@@ -43,6 +45,7 @@ import Header from "../../components/header";
 import Recommend from "./Recommend";
 import Mandatory from "./Mandatory";
 import Classification from "./Classification";
+import GlodelRiceAward from "./GlodenRiceAward";
 export default {
   name: "HomePage",
   data() {
@@ -61,7 +64,8 @@ export default {
     "tab-pane": tabPane,
     Recommend,
     Mandatory,
-    Classification
+    Classification,
+    GlodelRiceAward
   }
 };
 </script>

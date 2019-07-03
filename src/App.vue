@@ -3,9 +3,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 body {
+  padding:0;
+  margin:0;
   font-family: 微软雅黑;
 }
-.page_witdh {
+.page_width {
   padding: 0 15px;
   box-sizing: border-box;
 }
@@ -68,11 +70,9 @@ body {
 
 <template>
   <div id="app">
-    <div class="page_witdh">
-      <div class="default_view">
-        <router-view/>
-        <Navigator/>
-      </div>
+    <div class="default_view">
+      <router-view />
+      <Navigator/>
     </div>
   </div>
 </template>

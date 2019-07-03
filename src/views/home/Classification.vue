@@ -85,78 +85,80 @@
   }
 }
 .app_class {
-  padding-bottom:20px;
+  padding-bottom: 20px;
 }
 </style>
 
 <template>
   <div id="classification_page" class="classification">
-    <div class="class_zone">
-      <div class="zone_item" v-for="zone in classZones" :key="zone['id']">
-        <img class="zone_icon" :src="zone['icon']" alt srcset>
-      </div>
-    </div>
-    <div class="game_class app_class_wrapper">
-      <div class="title_common class_title">
-        <div class="main">
-          <div class="text">游戏分类</div>
-        </div>
-        <div class="sub">
-          <div class="text">精品游戏</div>
-          <svg
-            t="1561714096114"
-            class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            p-id="4971"
-            fill="#999999"
-          >
-            <path
-              d="M657.8 508.4L292.2 874c-11.7 11.7-11.7 30.7 0 42.4s30.7 11.7 42.4 0l365.6-365.6 42.4-42.4-42.4-42.4-357.5-357.5c-11.7-11.7-30.7-11.7-42.4 0s-11.7 30.7 0 42.4l357.5 357.5z"
-              p-id="4972"
-            ></path>
-          </svg>
+    <div class="page_width">
+      <div class="class_zone">
+        <div class="zone_item" v-for="zone in classZones" :key="zone['id']">
+          <img class="zone_icon" :src="zone['icon']" alt srcset />
         </div>
       </div>
-      <div class="class_list">
-        <div class="class_item" v-for="classItem in gameClass" :key="classItem['id']">
-          <div class="parent">
-            <div class="icon">
-              <img class="icon_img" :src="classItem['icon']" alt>
-            </div>
-            <div class="name" :style="{ color:classItem['color'] }">{{ classItem['name'] }}</div>
+      <div class="game_class app_class_wrapper">
+        <div class="title_common class_title">
+          <div class="main">
+            <div class="text">游戏分类</div>
           </div>
           <div class="sub">
-            <div
-              class="sub_item"
-              v-for="(subClass,subIndex) in classItem['sub']"
-              :key="subIndex"
-            >{{ subClass['name'] }}</div>
+            <div class="text">精品游戏</div>
+            <svg
+              t="1561714096114"
+              class="icon"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="4971"
+              fill="#999999"
+            >
+              <path
+                d="M657.8 508.4L292.2 874c-11.7 11.7-11.7 30.7 0 42.4s30.7 11.7 42.4 0l365.6-365.6 42.4-42.4-42.4-42.4-357.5-357.5c-11.7-11.7-30.7-11.7-42.4 0s-11.7 30.7 0 42.4l357.5 357.5z"
+                p-id="4972"
+              />
+            </svg>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="app_class app_class_wrapper">
-      <div class="title_common class_title">
-        <div class="main">
-          <div class="text">应用分类</div>
-        </div>
-      </div>
-      <div class="class_list">
-        <div class="class_item" v-for="classItem in appClass" :key="classItem['id']">
-          <div class="parent">
-            <div class="icon">
-              <img class="icon_img" :src="classItem['icon']" alt>
+        <div class="class_list">
+          <div class="class_item" v-for="classItem in gameClass" :key="classItem['id']">
+            <div class="parent">
+              <div class="icon">
+                <img class="icon_img" :src="classItem['icon']" alt />
+              </div>
+              <div class="name" :style="{ color:classItem['color'] }">{{ classItem['name'] }}</div>
             </div>
-            <div class="name" :style="{ color:classItem['color'] }">{{ classItem['name'] }}</div>
+            <div class="sub">
+              <div
+                class="sub_item"
+                v-for="(subClass,subIndex) in classItem['sub']"
+                :key="subIndex"
+              >{{ subClass['name'] }}</div>
+            </div>
           </div>
-          <div class="sub">
-            <div
-              class="sub_item"
-              v-for="(subClass,subIndex) in classItem['sub']"
-              :key="subIndex"
-            >{{ subClass['name'] }}</div>
+        </div>
+      </div>
+      <div class="app_class app_class_wrapper">
+        <div class="title_common class_title">
+          <div class="main">
+            <div class="text">应用分类</div>
+          </div>
+        </div>
+        <div class="class_list">
+          <div class="class_item" v-for="classItem in appClass" :key="classItem['id']">
+            <div class="parent">
+              <div class="icon">
+                <img class="icon_img" :src="classItem['icon']" alt />
+              </div>
+              <div class="name" :style="{ color:classItem['color'] }">{{ classItem['name'] }}</div>
+            </div>
+            <div class="sub">
+              <div
+                class="sub_item"
+                v-for="(subClass,subIndex) in classItem['sub']"
+                :key="subIndex"
+              >{{ subClass['name'] }}</div>
+            </div>
           </div>
         </div>
       </div>
