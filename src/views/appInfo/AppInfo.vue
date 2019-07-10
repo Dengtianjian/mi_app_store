@@ -293,7 +293,7 @@
           <DetailsPage />
         </keep-alive>
       </FullTabPane>
-      <FullTabPane title="评论(2万)" idkey="2">Comment</FullTabPane>
+      <FullTabPane title="评论(2万)" idkey="2"><CommentPage/></FullTabPane>
       <FullTabPane title="精选" idkey="3"><FeaturePage/></FullTabPane>
     </FullTab>
   </div>
@@ -305,6 +305,7 @@ import FullTabPane from "../../components/fullTab/FullTabPane";
 
 import DetailsPage from "./Details";
 import FeaturePage from "./Feature";
+import CommentPage from "./Comment";
 
 export default {
   name: "appInfo",
@@ -317,7 +318,8 @@ export default {
     FullTab,
     FullTabPane,
     DetailsPage,
-    FeaturePage
+    FeaturePage,
+    CommentPage
   }
 };
 </script>
