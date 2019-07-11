@@ -12,9 +12,14 @@ export default new Router({
       component: ()=>import(/* homepage */ './views/home/Homepage.vue')
     },
     {
-      name:"AppInfo",
+      name:"appinfo",
       path:"/app/:appId",
       component: ()=>import(/* homepage */ './views/appInfo/AppInfo.vue')
+    },
+    {
+      name:"game",
+      path:"/game",
+      component:()=>import(/* game */ './views/game/Game.vue')
     }
   ]
 })

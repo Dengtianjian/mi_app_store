@@ -5,6 +5,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    nav:{
+      isShow:true
+    },
     apps: [{
         id: 1,
         icon: "/static/app_icon/douyin.png",
@@ -116,7 +119,9 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
-
+    displayNav(state,payLoad){
+      state.nav.isShow=payLoad;
+    }
   },
   actions: {
 

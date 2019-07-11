@@ -1,6 +1,7 @@
 <style lang="less" scoped>
 .navigation_bar {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   display: flex;
@@ -128,15 +129,34 @@
     }
   }
 }
+.operate_wrapper {
+  position:fixed;
+  bottom:0;
+  left:0;
+  height:60px;
+  width:100%;
+  border-top:1px solid #d6d6d6;
+  background:white;
+  .install_button {
+    margin:8px auto 12px;
+    width:77%;
+    height:40px;
+    line-height:40px;
+    color:white;
+    text-align:center;
+    background:#0bae73;
+    border-radius:22px;
+  }
+}
 </style>
 
 <template>
   <div id="app_info" class="app_info">
     <div class="navigation_bar">
       <div class="left">
-        <div class="button">
+        <router-link to="/" class="button">
           <img class="icon" src="/static/icon/left_arrow_thin.png" />
-        </div>
+        </router-link>
       </div>
       <div class="middle"></div>
       <div class="right">
@@ -293,9 +313,18 @@
           <DetailsPage />
         </keep-alive>
       </FullTabPane>
-      <FullTabPane title="评论(2万)" idkey="2"><CommentPage/></FullTabPane>
-      <FullTabPane title="精选" idkey="3"><FeaturePage/></FullTabPane>
+      <FullTabPane title="评论(2万)" idkey="2">
+        <CommentPage />
+      </FullTabPane>
+      <FullTabPane title="精选" idkey="3">
+        <FeaturePage />
+      </FullTabPane>
     </FullTab>
+    <div class="operate_wrapper">
+      <div class="install_button">
+        安装
+      </div>
+    </div>
   </div>
 </template>
 
@@ -309,6 +338,20 @@ import CommentPage from "./Comment";
 
 export default {
   name: "appInfo",
+  created() {
+    if (this.$store.state.nav.isShow) {
+      this.$store.commit("displayNav", false);
+    }
+  },
+  beforeRouteEnter(to, form, next) {
+    next(vm => {
+      vm.$store.commit("displayNav", false);
+    });
+  },
+  beforeRouteLeave(to, from, next) {
+    next();
+    this.$store.commit("displayNav", true);
+  },
   data() {
     return {
       fraction: 4

@@ -72,7 +72,7 @@ body {
   <div id="app">
     <div class="default_view">
       <router-view />
-      <Navigator/>
+      <Navigator v-show="$store.state.nav.isShow" />
     </div>
   </div>
 </template>
@@ -81,6 +81,11 @@ body {
 import Navigator from "./components/navigator";
 
 export default {
+  data(){
+    return {
+      
+    }
+  },
   components: {
     Navigator
   }

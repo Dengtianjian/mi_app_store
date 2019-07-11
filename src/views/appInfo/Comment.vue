@@ -29,6 +29,7 @@
     }
   }
 }
+/* 发布评论 */
 .publish {
   display: flex;
   padding-top: 13px;
@@ -75,6 +76,7 @@
     border-radius: 4px;
   }
 }
+/* 发布评论弹窗 */
 .comment_enter_win {
   position: fixed;
   z-index: 7;
@@ -112,6 +114,7 @@
       border-radius: 4px;
       border: 1px solid #939393;
       box-sizing: border-box;
+      outline:none;
       &::placeholder {
         color: #b2b2b2;
       }
@@ -128,6 +131,7 @@
   }
 }
 
+/* 评论类型 */
 .comment_type {
   display: flex;
   flex-wrap: wrap;
@@ -148,6 +152,7 @@
     }
   }
 }
+/* 热门评论列表 */
 .hot_comment_list {
   margin-top: 13px;
   padding-top: 13px;
@@ -156,12 +161,14 @@
     font-size: 14px;
   }
 }
+/* 分隔块 */
 .separate_block {
   display: block;
   height: 7px;
   width: 100%;
   background: #efeff0;
 }
+/* 最新评论列表 */
 .latest_comment_list {
   margin-top:14px;
   padding-bottom: 80px;
