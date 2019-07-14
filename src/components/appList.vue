@@ -32,7 +32,7 @@
     margin-left: 13px;
     .detail {
       display: flex;
-      margin: 1px 0;
+      margin: 2px 0;
       font-size: 10px;
       color: #a5a5a5;
       .separator {

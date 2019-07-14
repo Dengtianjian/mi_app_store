@@ -23,15 +23,15 @@
     <Header class="default_header"/>
     <tabs :defaultKey="1" @change="switchPage" class="tabs_com">
       <tab-pane idkey="1" name="推荐">
-        <Recommend v-if="currentKey==1"/>
+        <Recommend />
       </tab-pane>
-      <tab-pane idkey="2" name="必备"><Mandatory v-if="currentKey==2" /></tab-pane>
-      <tab-pane idkey="3" name="免费小说">Contact</tab-pane>
+      <tab-pane idkey="2" name="必备"><Mandatory /></tab-pane>
+      <tab-pane idkey="3" name="免费小说"><span>Contact</span></tab-pane>
       <tab-pane idkey="4" name="分类">
-        <Classification v-if="currentKey==4" />
+        <Classification />
       </tab-pane>
       <tab-pane idkey="5" name="金米奖">
-        <GlodelRiceAward v-if="currentKey==5" />
+        <GlodelRiceAward />
       </tab-pane>
     </tabs>
   </div>
