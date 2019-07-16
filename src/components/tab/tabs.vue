@@ -154,8 +154,8 @@ export default {
         Math.abs(this.movePage.movePageY - this.movePage.startPageY) <
           Math.abs(this.movePage.movePageX - this.movePage.startPageX)
       ) {
-        this.movePage.isLangscape = true;
         e.preventDefault();
+        this.movePage.isLangscape = true;
         if (Math.abs(this.movePage.movePageX - this.movePage.startPageX) < 10) {
           return;
         }

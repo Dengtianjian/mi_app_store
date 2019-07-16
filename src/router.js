@@ -20,6 +20,11 @@ export default new Router({
       name:"game",
       path:"/game",
       component:()=>import(/* game */ './views/game/Game.vue')
+    },
+    {
+      name:"appPlanet",
+      path:"/appplanet",
+      component:()=>import(/* appplanet */ './views/appPlanet/AppPlanet.vue')
     }
   ]
 })

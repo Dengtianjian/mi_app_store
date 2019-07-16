@@ -23,11 +23,12 @@
     color:#ff6243;
   }
   .item_icon {
-    width: 20px;
+    // width: 20px;
     height: 20px;
   }
   .item_name {
-    font-size: 8px;
+    padding:2px 0;
+    font-size: 10px;
     color: #737373;
   }
 }
@@ -35,10 +36,10 @@
 
 <template>
   <div id="navigator" class="navigator">
-    <router-link :to="nav['url']" class="nav_item" :class="{ 'c':nav['id']==current }" v-for="nav in navs" :key="nav['id']">
-      <img class="item_icon" :src="nav['icon']" alt srcset>
+    <div class="nav_item" :class="{ 'c':nav['id']==current }" v-for="nav in navs" :key="nav['id']" @click="switchNav(nav)">
+      <img class="item_icon" :src="current==nav['id']?nav['icon_select']:nav['icon']">
       <div class="item_name">{{ nav['name'] }}</div>
-    </router-link>
+    </div>
   </div>
 </template>
 
@@ -52,35 +53,46 @@ export default {
         {
           id: 1,
           url: "/",
-          icon: "/static/icon/home_select.gif",
+          icon: "/static/icon/home.png",
+          icon_select:"/static/icon/home_select.gif",
           name: "首页"
         },
         {
           id: 2,
           url: "/game",
           icon: "/static/icon/game.gif",
+          icon_select: "/static/icon/game_select.png",
           name: "游戏"
         },
         {
           id: 3,
           url: "/leaderboard",
           icon: "/static/icon/leaderboard.gif",
+          icon_select: "/static/icon/leaderboard_select.png",
           name: "榜单"
         },
         {
           id: 4,
           url: "/appplanet",
           icon: "/static/icon/app_planet.gif",
+          icon_select: "/static/icon/app_planet_select.png",
           name: "APP星球"
         },
         {
           id: 5,
           url: "/mine",
           icon: "/static/icon/mine.gif",
+          icon_select: "/static/icon/mine_select.png",
           name: "我的"
         }
       ]
     };
+  },
+  methods:{
+    switchNav(nav){
+      this.current=nav['id'];
+      this.$router.replace(nav['url'])
+    }
   }
 };
 </script>
