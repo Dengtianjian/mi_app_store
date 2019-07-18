@@ -15,15 +15,16 @@
 }
 .header_separator {
   width: 100%;
-  height: 53px;
+  height: 93px;
 }
 .search {
-  flex: 5;
+  flex: 6;
 }
 .download {
   flex: 1;
 }
 .download_icon {
+  margin-right:5px;
   float: right;
   width: 14px;
   height: 19px;
@@ -31,10 +32,11 @@
 </style>
 
 <template>
-  <div id="header" class="header" :style="{ borderBottom:isBorder?'1px solid #F3F3F3':'' }">
-    <div class="header_separator"></div>
-    <div class="header_fixed">
-      <Search class="search" />
+  <div id="header" class="header" >
+    
+    <div class="header_separator" :style="{height}"></div>
+    <div class="header_fixed" :style="{ borderBottom:isBorder?'1px solid #F3F3F3':'' }">
+      <Search class="search" @searchFocus="show" />
       <div class="download">
         <img class="download_icon" src="/static/icon/download.png" alt srcset />
       </div>
@@ -46,10 +48,16 @@
 import Search from "./search";
 export default {
   name: "Header",
+  props:['height'],
   data() {
     return {
       isBorder: false
     };
+  },
+  methods:{
+    show(e){
+      this.isBorder=e.show
+    }
   },
   components: {
     Search

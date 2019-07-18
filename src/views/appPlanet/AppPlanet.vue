@@ -13,7 +13,7 @@
       <pane idkey="2" name="应用馆">
         <AppHall/>
       </pane>
-      <pane idkey="3" name="视频">视频</pane>
+      <pane idkey="3" name="视频"><Video/></pane>
     </tabs>
   </div>
 </template>
@@ -25,6 +25,7 @@ import pane from "../../components/tab/pane";
 
 import Today from "./Today";
 import AppHall from "./AppHall";
+import Video from "./Video";
 
 export default {
   name: "AppPlanet",
@@ -33,7 +34,8 @@ export default {
     tabs,
     pane,
     Today,
-    AppHall
+    AppHall,
+    Video
   }
 };
 </script>

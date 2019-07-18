@@ -12,16 +12,12 @@
   background:white;
   box-sizing:border-box;
 }
-.top_placeholder {
-  height:93px;
-}
 </style>
 
 <template>
   <div id="home_page" class="home">
-    <div class="top_placeholder"></div>
-    <Header class="default_header"/>
-    <tabs :defaultKey="1" @change="switchPage" class="tabs_com">
+    <Header class="default_header" height="93px"/>
+    <tabs :defaultKey="1" justifyContent="space-between" class="tabs_com">
       <tab-pane idkey="1" name="推荐">
         <Recommend />
       </tab-pane>
@@ -50,13 +46,11 @@ export default {
   name: "HomePage",
   data() {
     return {
-      currentKey: 1
+      
     };
   },
   methods: {
-    switchPage(parent) {
-      this.currentKey = parent["key"];
-    }
+    
   },
   components: {
     Header,

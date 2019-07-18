@@ -89,7 +89,7 @@
       .detection_item {
         display: inline-block;
         margin-right: 6px;
-        padding: 0 4px 3px;
+        padding: 1px 4px 0;
         height: 14px;
         font-size: 10px;
         color: #25c16c;

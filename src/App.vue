@@ -53,7 +53,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   .badge_item {
-    margin: 0 11px 11px 0;
+    margin: 0 8px 11px 0;
     padding: 0 14px;
     height: 26px;
     line-height: 26px;
